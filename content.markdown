@@ -248,6 +248,35 @@ How to choose the direction of the dependency?
 > Gang of Four, 1995
 
 
+## Public interface
+* Others will depend on it
+* so don't change a lot
+* well documented with tests
+* minimize implementation details
+
+
+## Private interface
+* Others won't depend on it (or they take the risk)
+* can change any time
+* may not show up in tests
+* handle implementation details
+
+
+## How to find the public interface?
+TODO: This is the place of big code
+
+
+## Summary
+* Object-oriented applications are defined by the messages that pass between
+objects.
+* Public interfaces consist of stable methods that expose the
+responsibilities of their classes.
+* Focusing on messages reveals objects that might otherwise be overlooked.
+When messages are trusting and ask for what the sender wants instead of telling the
+receiver how to behave, objects naturally evolve public interfaces that are
+flexible and reusable in novel and unexpected ways.
+
+
 
 # Ducktyping
 
