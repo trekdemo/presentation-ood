@@ -146,6 +146,22 @@ For example to handle hundreds of gigs of satelite images.
 
 
 
+# Manage dependencies
+
+
+
+# Interfaces
+
+
+
+# Ducktyping
+
+
+
+# Composition
+
+
+
 > Program to and **interface**, not an implementation.
 >
 > Gang of Four, 1995
