@@ -6,11 +6,11 @@
 
 
 # Why we talk about it
-> We want to do out best work, and we want the work we do to have meaning.
+> We want to do our best work, and we want the work we do to have meaning.
 
 
 ![pain][pain]
-> ...frustration occurs when it costs too muck to get things done.
+> ...frustration occurs when it costs too much to get things done.
 
 [pain]: http://i.imgur.com/Iiee3.gif
 
@@ -33,7 +33,7 @@
 ## TRUE
 * **Transparent**
 
-  *The consequences of change should be obvius in the code that is changing and
+  *The consequences of change should be obvious in the code that is changing and
   in distant code relies upon it.*
 * **Reasonable**
 
@@ -104,7 +104,7 @@ For example to handle hundreds of gigs of satelite images.
 * *What's your favorite?*
 
 
-## Best practieses
+## Best practices
 * Convention over Configuration
 * TDD - BDD as a development practice
 * [Rails Best Practices][rbp]
@@ -222,10 +222,10 @@ Our design challange is to manage dependencies, to make the fewest possible.
 
 
 ## Dependency direction
-How to choose the direction of the dependency?
+### How to choose the direction of the dependency?
 
 * Some classes are more likely then others to have changes in requirements
-* Contcrete classes are mosre likely to change than abstract classes
+* Concrete classes are more likely to change than abstract classes
 * Changing a class with many dependents will cause
   [shotgun-surgery][shotgun_surgery]
 
@@ -243,15 +243,17 @@ How to choose the direction of the dependency?
 # Interfaces
 
 
-> Program to and **interface**, not an implementation.
+> Program to an **interface**, not an implementation.
 >
 > Gang of Four, 1995
+
+### What does it mean?
 
 
 ## Public interface
 * Others will depend on it
 * so don't change a lot
-* well documented with tests
+* document well with tests
 * minimize implementation details
 
 
@@ -263,18 +265,16 @@ How to choose the direction of the dependency?
 
 
 ## How to find the public interface?
-TODO: This is the place of big code
+TODO: This is the place of BIG code
 
 
 ## Summary
 * Object-oriented applications are defined by the messages that pass between
-objects.
+  objects.
 * Public interfaces consist of stable methods that expose the
-responsibilities of their classes.
+  responsibilities of their classes.
 * Focusing on messages reveals objects that might otherwise be overlooked.
-When messages are trusting and ask for what the sender wants instead of telling the
-receiver how to behave, objects naturally evolve public interfaces that are
-flexible and reusable in novel and unexpected ways.
+* Trust objects, do not tell them how to behave
 
 
 
@@ -283,9 +283,6 @@ flexible and reusable in novel and unexpected ways.
 
 
 # Composition
-
-
-
 
 
 
