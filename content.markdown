@@ -142,15 +142,110 @@ For example to handle hundreds of gigs of satelite images.
 * Easiest way to make change is adding new changeable code.
 
 
-# Workshop
+# Code!!!
 
 
 
 # Manage dependencies
 
 
+> An object depends on another object if, when one object changes, the other
+> might be forced to change in turn.
+
+
+## Types of dependency
+* object knows the name of other class
+* object knows the name of the instance/class method
+* object knows what arguments should it pass
+* object knows the order of the arguments
+* object knows what the other object knows *(method chaining)*
+* ...test-to-code over coupling
+
+
+![knows too much][know_too_much]
+
+[know_too_much]: http://weknowmemes.com/wp-content/uploads/2012/11/he-knew-too-much-dog.jpg
+
+
+Our design challange is to manage dependencies, to make the fewest possible.
+
+
+# Solutions
+
+
+## Dependency injection
+
+    def how_old_is_the_captain?(weight, height, blood_pressure)
+      MAGIC_FACTOR * blood_pressure * BMI.new(weight, height)
+    end
+
+    def how_old_is_the_captain?(bmi, blood_pressure)
+      MAGIC_FACTOR * blood_pressure * bmi
+    end
+
+    how_old_is_the_captain?(Bmi.new(80, 189), 90) # => 42
+
+
+## Dependency isolation
+
+    class CaptainAgeSolver
+      attr_accessor :weight, :height
+
+      def initialize(weight, height)
+        # ...
+      end
+
+      def how_old_is_the_captain?(blood_pressure)
+        MAGIC_FACTOR * blood_pressure * bmi
+      end
+
+      def bmi
+        @bmi ||= Bmi.new(weight, heigh)
+      end
+    end
+
+
+## Remove Argument-Order Dependencies with Hash
+
+    class CaptainAgeSolver
+      def initialize(weight, height)
+        # ...
+      end
+    end
+
+    class CaptainAgeSolver
+      def initialize(args)
+        @weight = args[:weight] || 50       # falsy values won't make it
+        @height = args.fetch(:height, 160)  # any value will make it
+      end
+    end
+
+
+## Dependency direction
+How to choose the direction of the dependency?
+
+* Some classes are more likely then others to have changes in requirements
+* Contcrete classes are mosre likely to change than abstract classes
+* Changing a class with many dependents will cause
+  [shotgun-surgery][shotgun_surgery]
+
+[shotgun_surgery]: http://en.wikipedia.org/wiki/Shotgun_surgery
+
+
+## Summary
+* Dependency management is core to creating future-proof applications.
+* Injecting dependencies creates loosely coupled objects.
+* Isolating dependencies allows objects to quickly adapt to unexpected changes.
+* The key to managing dependencies is to control their direction.
+
+
 
 # Interfaces
+
+
+> Program to and **interface**, not an implementation.
+>
+> Gang of Four, 1995
 
 
 
@@ -162,9 +257,6 @@ For example to handle hundreds of gigs of satelite images.
 
 
 
-> Program to and **interface**, not an implementation.
->
-> Gang of Four, 1995
 
 
 
