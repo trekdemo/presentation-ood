@@ -247,7 +247,11 @@ Our design challange is to manage dependencies, to make the fewest possible.
 >
 > Gang of Four, 1995
 
-### What does it mean?
+### What does it mean...
+
+
+## ...and what are interfaces for?
+![Communication](https://dl.dropboxusercontent.com/u/519915/interface_comm.png)
 
 
 ## Public interface
@@ -265,7 +269,27 @@ Our design challange is to manage dependencies, to make the fewest possible.
 
 
 ## How to find the public interface?
-TODO: This is the place of BIG code
+* Public methods should read like the description of responsibilities of the
+  containing class.
+* Design maximum future flexibility,
+* while writing the smallest amount of code.
+* It is an art!
+
+
+### Sequence Diagrams
+* Ask "What" instead of "How"
+* If you have the question, who should answer it?
+* Seek context independence
+
+![Sequence diagram][seq_diag]
+[seq_diag]: https://dl.dropboxusercontent.com/u/519915/sequenceDiagramEnrollInSeminar.jpg
+
+
+* From procedural to OO style
+* Minimalize public interface
+* Trust receiver
+
+![Trip-Bikes-Mechanic](https://dl.dropboxusercontent.com/u/519915/seq_diag_evolv.png)
 
 
 ## Summary
@@ -278,11 +302,15 @@ TODO: This is the place of BIG code
 
 
 
-# Ducktyping
+# Aquire behaviour
+* via classical inheritence
+* via sharing role behaviours with modules
+* via composition
 
 
-
-# Composition
+## Inheritence
+## Role behaviours via modules
+## Composition
 
 
 
